@@ -140,7 +140,7 @@ def convert_from_path(
     current_page = first_page
     processes = []
     for _ in range(thread_count):
-        thread_output_file = next(output_file)
+        thread_output_file = output_file.__next__()
 
         # Get the number of pages the thread will be processing
         thread_page_count = page_count // thread_count + int(reminder > 0)
